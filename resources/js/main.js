@@ -8,12 +8,19 @@ var convey = {
 	}
 };
 
-$(window).load(function()	// wait until elements of page finish loading
+// Stop using the github path, gee whiz
+if (window.location.host == "smartystreets.github.io")
+	window.location = "http://goconvey.co";
+
+
+// Wait until elements of page, including images, finish loading
+$(window).load(function()
 {
 	setTimeout(function() { changeStatus(convey.statuses.fail); }, 500);
 	setTimeout(function() { changeStatus(convey.statuses.pass); }, 2500);
 });
 
+// When document ready
 $(function()
 {
 	// Sticky nav
